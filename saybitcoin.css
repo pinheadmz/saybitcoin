@@ -1,0 +1,103 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: sans-serif; !important
+	font-size: 20px; !important
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	font-family: arial, sans-serif;
+	font-size: 16px;
+}
+
+textarea{
+	resize: none;
+}
+
+body{
+	text-align: center;
+}
+
+#encoder{
+	width: 300px;
+}
+
+#encoderOutput{
+	display: inline-block;
+	position: relative;
+
+	border: 1px solid black;
+	width: 300px;
+	height: 40px;
+}
+
+#decoder{
+	width: 300px;
+	height: 40px;
+}
+
+#decoderOutput{
+	display: inline-block;
+	position: relative;
+
+	border: 1px solid black;
+
+	width: 300px;
+	height: 30px;
+}
+
+.button{
+	display: inline-block;
+	position: relative;
+	line-height: 20px;
+	height: 20px;
+	width: 100px;
+	
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.button:hover{
+	cursor: pointer;
+	background-color: gray;
+	color: white;
+}
+
+#errorOutput{
+	display: inline-block;
+	position: relative;
+	color: red;
+}
+
+.good{
+	color: green;
+}
+
+#donate{
+	margin-top:20px;
+	font-size: 12px;
+}
+
+#donate textarea{
+	width: 300px;
+	height: 40px;
+}
+
+#donate span{
+	vertical-align: top;
+}

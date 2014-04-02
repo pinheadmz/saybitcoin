@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="saybitcoin.css">
+	<script type='text/javascript' src='corncob.js'></script>
+	<script type='text/javascript' src='biginteger.js'></script>
+	<script type='text/javascript' src='saybitcoin.js'></script>
+	<title>SayBitcoin Translator</title>
+<head>
+<body>
+<br>
+
+Enter base58 string:<br>
+<input type='text' id='encoder' onfocus='clearError()' autofocus><br>
+<div id='goEncode' class='button' onclick='goEncode()'>Encode!</div><br><br>
+
+SayBitcoin encoded output:<br>
+<textarea id='encoderOutput' readonly></textarea><br><br><br><br>
+
+
+
+Enter SayBitcoin encoded phrase:<br>
+<textarea id='decoder' onfocus='clearError()'></textarea><br>
+<div id='goDecode' class='button' onclick='goDecode()'>Decode!</div><br><br>
+
+Original base58 string:<br>
+<input type='text' id='decoderOutput' readonly><br><br>
+
+<div id='errorOutput'></div>
+<div id='donate'>Created by <a href='mailto:matthew.zikin@gmail.com'>Matthew Zipkin</a><br>
+	<a href="bitcoin://1SAYYFpdkAwy6UNk3TqzSqUxZWJbb1bNE">1SAYYFpdkAwy6UNk3TqzSqUxZWJbb1bNE</a><br>
+	<span></span><textarea id='donateText' type='text' readonly>marshaller hike popup magnetron slaying remorseful musicologists boathouse poetically summers bottomed hundredfold aardwolf</textarea>
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46315851-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
+
