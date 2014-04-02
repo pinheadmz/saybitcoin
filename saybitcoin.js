@@ -12,8 +12,12 @@ function encode(input, inputAlph, outputAlph, spacer){
 	// convert input string into BigInteger by totaling each digit * exponent position
 	// loop through string 'backwards' for little endian
 	var total = BigInteger(0);
-	for (var i = 0 ; i < l ; i++){	
+	for (var i = l - 1 ; i >= 0 ; i--){			
 		var alphaPos = inputAlph.indexOf(input[i]);	
+		
+		// first character of bitcoin address "1" translates to zero, must be adjusted
+		if (i == 0)
+			alphaPos++;
 		
 		// character is not in input alphabet
 		if (alphaPos == -1){
@@ -22,7 +26,7 @@ function encode(input, inputAlph, outputAlph, spacer){
 		}
 				
 		var n = BigInteger(alphaPos);
-		var exp = inputBase.pow(i);
+		var exp = inputBase.pow(l - 1 - i);
 		var value = n.multiply(exp);
 		total = total.add(value);
 	}
@@ -38,13 +42,18 @@ function encode(input, inputAlph, outputAlph, spacer){
 		
 		// no extra spaces at end of output
 		if(!first)
-			output += spacer;
+			output = spacer + output;
 		else
 			first = false;
-					
-		output += outputAlph[remainder];
 		
-		var total = total.divide(outputBase);		
+		var total = total.divide(outputBase);
+		
+		// last iteration = first character, compensate for bitcoin address "1"
+		if (total <= 0)
+			remainder--;
+		
+		output = outputAlph[remainder] + output;
+
 	}
 	
 	// return converted string and BigInteger value for Bitcoin validation
