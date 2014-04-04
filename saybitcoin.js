@@ -16,7 +16,7 @@ function encode(input, inputAlph, outputAlph, spacer){
 		var alphaPos = inputAlph.indexOf(input[i]);	
 		
 		// first character of bitcoin address "1" translates to zero, must be adjusted
-		if (i == 0)
+		if ((inputAlph == base58) && (i == 0))
 			alphaPos++;
 		
 		// character is not in input alphabet
@@ -49,7 +49,7 @@ function encode(input, inputAlph, outputAlph, spacer){
 		var total = total.divide(outputBase);
 		
 		// last iteration = first character, compensate for bitcoin address "1"
-		if (total <= 0)
+		if ((outputAlph == base58) && (total <= 0))
 			remainder--;
 		
 		output = outputAlph[remainder] + output;
