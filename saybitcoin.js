@@ -49,7 +49,7 @@ function encode(input, inputAlph, outputAlph, spacer){
 		var total = total.divide(outputBase);
 		
 		// last iteration = first character, compensate for bitcoin address "1"
-		if ((inputAlph == 'base58') && (total <= 0))
+		if ((outputAlph == 'base58') && (total <= 0))
 			remainder--;
 		
 		output = outputAlph[remainder] + output;
